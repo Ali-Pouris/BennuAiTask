@@ -1,69 +1,71 @@
-# React + TypeScript + Vite
+# 📌 راه‌اندازی پروژه React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 مراحل اجرا
 
-Currently, two official plugins are available:
+1. ریپازیتوری را کلون کنید:
+2. وارد پوشه پروژه شوید:
+3. پکیج‌ها را نصب کنید:
+nodejs را نصب داشته باشید
+dns خود را نیز تغییر دهید
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   ```bash
+   npm install
+   ```
+4. پروژه را اجرا کنید:
 
-## Expanding the ESLint configuration
+   ```bash
+   npm run dev
+   ```
+5. در مرورگر آدرس زیر را باز کنید:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+   ```
+   http://localhost:5173
+   ```
 
-```js
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📝 توضیحات پروژه
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+* این طرح به‌صورت ذهنی پیاده‌سازی شده؛ به چیزی خاصی نگاه نکردم و فقط در ذهنم تصور کردم و کدنویسی کردم.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* چون حوصله نداشتم از روی عکس اندازه‌ها، آیکن‌ها، رنگ‌ها و جزئیات دیگر را دربیاورم.
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+* اگر به استایل اهمیت می‌دهید، لطفاً طرح فیگما ارسال کنید.
 
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+* APIهای استفاده‌شده مربوط به سایت [DummyJSON](https://dummyjson.com) هستند و صرفاً از **لاگین** و **لیست کاربران** استفاده شده است.
+
+---
+
+## 🔐 صفحه لاگین
+
+* در این صفحه لیست کاربران نمایش داده می‌شود.
+* کافی است یک `username` و `password` انتخاب کنید و وارد شوید.
+
+📸 تصویر نمونه:
+![صفحه لاگین](./public/LoginPage.png.png)
+
+---
+
+## 📊 صفحه داشبورد
+
+* راستش دقیقاً متوجه نشدم منظور شما از «کارت» چیست. برای همین از کارت‌های پاسور استفاده کردم 😂
+
+* از آنجایی که endpointها نقش کاربری ندارند، من جنسیت را بررسی می‌کنم:
+
+  * اگر کاربر **مرد** باشد → فقط کارت‌های شماره‌دار نمایش داده می‌شوند.
+  * اگر کاربر **زن** باشد → فقط کارت‌های تصویری (آس، شاه، بی‌بی و سرباز) نمایش داده می‌شوند.
+
+* در پشت صحنه، لیست کاربران دریافت می‌شود و به‌صورت تصادفی پنج کاربر انتخاب می‌شوند.
+
+* اگر ماوس را روی هر کارت نگه دارید، **نام و نام خانوادگی کاربر** نمایش داده می‌شود.
+
+📸 تصویر نمونه:
+![صفحه داشبورد](./public/HomePage.png)
+
+---
+
+## ⚠️ نکات
+
+* در این پروژه خیلی چیزها در نظر گرفته نشده است.
+* ساختار پروژه برای بزرگ‌تر شدن مناسب نیست.
+* بسیاری از تنظیمات و کانفیگ‌ها هم انجام نشده‌اند.
